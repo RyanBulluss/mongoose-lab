@@ -1,30 +1,35 @@
 <%- include('../partials/header') %>
 
-<form action="/flights" method="POST">
-    <label>Airline
-        <select name="airline">
-            <option value='American'>American</option>
-            <option value='Southwest'>Southwest</option>
-            <option value="United">United</option>
+<div class="col-md-8 text-left">
+    <form action="/flights" method="POST">
+      <div class="form-group">
+        <label for="airline">Airline</label>
+        <select class="form-control" required name="airline" id="airline">
+          <option value="American">American</option>
+          <option value="Southwest">Southwest</option>
+          <option value="United">United</option>
         </select>
-    </label><br>
-    <label>Airport
-        <select name="airport">
-            <option value='AUS'>AUS</option>
-            <option value='DFW'>DFW</option>
-            <option value="DEN" selected>DEN</option>
-            <option value="LAX">LAX</option>
-            <option value="SAN">SAN</option>
+      </div>
+      <div class="form-group">
+        <label for="airport">Airport</label>
+        <select class="form-control" required name="airport" id="airport">
+          <option value="AUS">AUS</option>
+          <option value="DFW">DFW</option>
+          <option value="DEN" selected>DEN</option>
+          <option value="LAX">LAX</option>
+          <option value="SAN">SAN</option>
         </select>
-    </label><br>
-    <label>Flight Number
-        <input type="number" name="flightNo">
-    </label><br>
-    <label>Departs
-        <input type="datetime-local" name="departs">
-    </label><br>
-
-    <button type="submit">Add Flight</button>
-</form>
+      </div>
+      <div class="form-group">
+        <label for="flightNo">Flight Number</label>
+        <input type="number" class="form-control" required name="flightNo">
+      </div>
+      <div class="form-group">
+        <label for="departs">Departs</label>
+        <input type="datetime-local" class="form-control" required name="departs" id="departs">
+      </div>
+      <button type="submit" class="btn mt-3 btn-primary">Add Flight</button>
+    </form>
+  </div>
 
 <%- include('../partials/footer') %>

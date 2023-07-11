@@ -19,8 +19,6 @@ function newFlight(req, res) {
 }
 
 async function create(req, res) {
-    console.log(req.body);
-
     try {
         await Flight.create(req.body);
         res.redirect('/flights') 
@@ -30,8 +28,22 @@ async function create(req, res) {
     }
 }
 
+async function show(req, res) {
+
+    try {
+      const flight = await Flight.findById(req.params.id);
+  
+      res.render('flights/show', { title: 'Flight Details', flight });
+    } catch (err) {
+      console.log(err);
+  
+      res.redirect('/flight');
+    }
+  }
+
 module.exports = {
     create,
     index,
-    new: newFlight
+    new: newFlight,
+    show
 }
