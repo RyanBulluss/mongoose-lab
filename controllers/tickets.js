@@ -35,12 +35,23 @@ async function create(req, res) {
     }
   
     res.redirect(`/flights/tickets/${flight._id}-show`);
-  }
+}
+
+async function deleteTicket(req, res) {
+    try {
+        ticket.delete();
+        res.render('flights/tickets/new', { title: 'Ticket Details', flight });
+      } catch (err) {
+        console.log(err);
+        res.redirect('/flight');
+      }
+}
 
 
 
 module.exports = {
     show,
     create,
-    new: newTicket
+    new: newTicket,
+    delete: deleteTicket
 }

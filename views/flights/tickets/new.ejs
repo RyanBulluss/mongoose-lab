@@ -1,11 +1,9 @@
 <%- include('../../partials/header') %>
 
-<h3>New Destination</h3>
-
 
 <form method="POST" action="./<%= flight._id %>">
     <div class="form-group"></div>
-        <label for="seat">Seat (A-F 1-9)</label>
+        <label for="seat">Seat (A-F | 1-9)</label>
         <input name="seat" required pattern="[A-F][1-9]\d?">
     </div>
     <div class="form-group">

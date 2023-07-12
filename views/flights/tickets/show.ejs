@@ -1,9 +1,13 @@
 <%- include('../../partials/header') %>
 
-<%- flight.tickets.map(function(ticket) {
-    return `<div>${ticket.seat} - £${ticket.price}</div><br>`;
+<%- flight.tickets.map(function(ticket) { 
+    return `<div>
+        ${ticket.seat} - £${ticket.price}
+    </div><br>`
 
 }).join('') %>
+
+
 
 <form action="./<%= flight._id %>-new" method="GET">
     <button class="btn mt-3 btn-primary">New Ticket</button>
